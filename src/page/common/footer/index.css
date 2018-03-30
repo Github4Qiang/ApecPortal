@@ -1,0 +1,25 @@
+/*
+* @Author: Polylanger
+* @Date:   2018-03-29 22:59:54
+* @Last Modified by:   Polylanger
+* @Last Modified time: 2018-03-29 23:03:14
+*/
+
+.footer {
+	padding-bottom: 10px;
+}
+/* 友情链接 */
+.footer .links {
+	text-align: center;
+	color: #666;
+	line-height: 30px;
+}
+.footer .links .link {
+	padding: 0 10px;
+}
+/* Copyright */
+.footer .copyright {
+	text-align: center;
+	color: #666;
+	line-height: 30px;
+}

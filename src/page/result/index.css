@@ -1,0 +1,33 @@
+/*
+* @Author: Polylanger
+* @Date:   2018-03-30 14:49:01
+* @Last Modified by:   Polylanger
+* @Last Modified time: 2018-03-30 14:55:12
+*/
+
+.page-wrap {
+	background: #fff;
+	padding: 30px 0;
+	margin-top: 20px;
+	text-align: center;
+}
+
+.result-container {
+	display: none;
+}
+
+.result-container .result-title {
+	color: #555;
+}
+
+.result-container .result-content {
+	margin-top: 20px;
+}
+
+.result-container .result-content .link {
+	padding: 5px 10px;
+	border: 1px solid #ccc;
+	margin: 0 5px;
+}
+
+
