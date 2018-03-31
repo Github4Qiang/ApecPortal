@@ -2,7 +2,7 @@
 * @Author: Polylanger
 * @Date:   2018-03-29 20:45:50
 * @Last Modified by:   Polylanger
-* @Last Modified time: 2018-03-29 21:27:18
+* @Last Modified time: 2018-03-31 14:55:36
 */
 
 /* css reset */
@@ -38,6 +38,24 @@ input[type='checkbox'] {
 	width: 1080px;
 	margin: 0 auto;
 	position: relative;
+	overflow: hidden;
+}
+
+/* 通用 panel */
+.panel {
+	padding: 10px;
+	margin-bottom: 10px;
+	background: #fff;
+}
+.panel .panel-title {
+	padding: 10px;
+	font-size: 14px;
+	color: #666;
+	font-weight: bold;
+	border-bottom: 1px solid #eee;
+}
+.panel .panel-body {
+	padding: 10px;
 	overflow: hidden;
 }
 

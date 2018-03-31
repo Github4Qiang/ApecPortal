@@ -2,7 +2,7 @@
 * @Author: Polylanger
 * @Date:   2018-03-28 20:46:24
 * @Last Modified by:   Polylanger
-* @Last Modified time: 2018-03-29 20:44:23
+* @Last Modified time: 2018-03-31 13:15:26
 */
 
 'use strict'
@@ -76,7 +76,7 @@ var _apec = {
 		}
 		// 手机号验证
 		if ('phone' === type) {
-			return /^(13[0-9]|14[579]|15[0-3,5-9]|16[6]|17[0135678]|18[0-9]|19[89])\\d{8}$/.test(value);
+			return /^(13[0-9]|14[579]|15[0-3,5-9]|16[6]|17[0135678]|18[0-9]|19[89])\d{8}$/.test(value);
 		}
 		// 邮箱格式验证
 		if ('email' === type) {
@@ -85,7 +85,7 @@ var _apec = {
 	}, 
 	// 统一登录处理
 	doLogin: function() {
-		window.location.href = './login.html?redirect=' + encodeURIComponent(window.location.href);
+		window.location.href = './user-login.html?redirect=' + encodeURIComponent(window.location.href);
 	}, 
 	// 统一返回主页
 	goHome: function() {

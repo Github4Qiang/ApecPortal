@@ -2,7 +2,7 @@
 * @Author: Polylanger
 * @Date:   2018-03-27 20:42:16
 * @Last Modified by:   Polylanger
-* @Last Modified time: 2018-03-30 14:36:45
+* @Last Modified time: 2018-03-31 14:30:15
 */
 
 'use strict'
@@ -13,4 +13,4 @@ require('page/common/header/index.js');
 const navSide = require('page/common/nav-side/index.js');
 const _apec = require('util/apec.js'); 
 
-navSide.init({name: 'pass-update'});
+navSide.init();

@@ -2,7 +2,7 @@
 * @Author: Polylanger
 * @Date:   2018-03-29 23:30:47
 * @Last Modified by:   Polylanger
-* @Last Modified time: 2018-03-30 13:27:52
+* @Last Modified time: 2018-03-31 14:46:06
 */
 
 /* header 样式 */
@@ -15,6 +15,7 @@
 	font-size: 36px;
 	color: #c60023;
 	font-weight: bold;
+	text-decoration: none;
 }
 
 /* 搜索框样式 */
@@ -32,4 +33,15 @@
 .header .search-container .search-btn {
 	position: absolute;
 	height: 44px;
+}
+
+/* 面包屑导航的样式 */
+.crumb {
+	margin-bottom: 15px;
+	height: 50px;
+	line-height: 50px;
+	background: #eee;
+	color: #888;
+	font-size: 14px;
+	border-top: 2px solid #c60023;
 }

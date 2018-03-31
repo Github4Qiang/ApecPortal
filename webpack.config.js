@@ -2,7 +2,7 @@
 * @Author: Polylanger
 * @Date:   2018-03-27 20:46:49
 * @Last Modified by:   Polylanger
-* @Last Modified time: 2018-03-30 14:41:34
+* @Last Modified time: 2018-03-31 16:37:43
 */
 
 'use strict'
@@ -30,10 +30,15 @@ var getHtmlConfig = function(name, title){
 var config = {
 	// webpack 基本配置
 	entry: {								// 唯一入口文件
-		'common'	: [__dirname + '/src/page/common/index.js'],
-		'index'		: [__dirname + '/src/page/index/index.js'],
-		'login'		: [__dirname + '/src/page/login/index.js'],
-        'result'    : [__dirname + '/src/page/result/index.js']
+		'common'	        : [__dirname + '/src/page/common/index.js'],
+		'index'		        : [__dirname + '/src/page/index/index.js'],
+		'user-login'        : [__dirname + '/src/page/user-login/index.js'],
+        'user-register'     : [__dirname + '/src/page/user-register/index.js'],
+        'user-pass-reset'   : [__dirname + '/src/page/user-pass-reset/index.js'],
+        'user-center'       : [__dirname + '/src/page/user-center/index.js'],
+        'user-center-update': [__dirname + '/src/page/user-center-update/index.js'],
+        'user-pass-update': [__dirname + '/src/page/user-pass-update/index.js'],
+        'result'            : [__dirname + '/src/page/result/index.js']
 	}, 
 	output: {
 		path: __dirname + '/dist', 			// 打包后的文件路径
@@ -91,7 +96,12 @@ var config = {
 		new ExtractTextPlugin('css/[name].css'), 
 		// 依据 html 模板，生成一个自动引用打包后 js 文件的新 html
 		new HtmlWebpackPlugin(getHtmlConfig('index', '首页')),
-		new HtmlWebpackPlugin(getHtmlConfig('login', '用户登录')), 
+		new HtmlWebpackPlugin(getHtmlConfig('user-login', '用户登录')), 
+        new HtmlWebpackPlugin(getHtmlConfig('user-register', '用户注册')), 
+        new HtmlWebpackPlugin(getHtmlConfig('user-pass-reset', '找回密码')), 
+        new HtmlWebpackPlugin(getHtmlConfig('user-center', '个人中心')), 
+        new HtmlWebpackPlugin(getHtmlConfig('user-center-update', '修改个人信息')), 
+        new HtmlWebpackPlugin(getHtmlConfig('user-pass-update', '修改密码')), 
         new HtmlWebpackPlugin(getHtmlConfig('result', '操作结果'))
 	]
 };

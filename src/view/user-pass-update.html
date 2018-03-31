@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<%= require('html-loader!./layout/head-common.html')%>	
+	<title><%= htmlWebpackPlugin.options.title%> — APEC农产品电商</title>
+</head>
+<body>
+	<%= require('html-loader!./layout/nav.html')%>
+	<%= require('html-loader!./layout/header.html')%>
+	<!-- 面包屑导航 -->
+	<div class="crumb">
+		<div class="w">
+			<div class="curmb-container">
+				<a class="link" href="./index.html">APEC</a>
+				<span>></span>
+				<span class="link-text">
+					<%= htmlWebpackPlugin.options.title%>
+				</span>
+			</div>
+		</div>
+	</div>
+
+	<div class="page-wrap w">
+		<%= require('html-loader!./layout/nav-side.html')%>
+		<div class="content with-nav">
+			<div class="panel">
+				<div class="panel-title">修改密码</div>
+				<div class="panel-body">
+					<div class="user-info">
+						<div class="form-line">
+							<label class="label" for="passowrd-old">原密码：</label>
+							<input class="input" id="passowrd-old" type="password" autocomplete="off">
+						</div>
+						<div class="form-line">
+							<label class="label" for="password-new">新密码：</label>
+							<input class="input" id="password-new" type="password" autocomplete="off">
+						</div>
+						<div class="form-line">
+							<label class="label" for="password-confirm">确认密码：</label>
+							<input class="input" id="password-confirm" type="password" autocomplete="off">
+						</div>
+						<span class="btn btn-submit">提交</span>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<%= require('html-loader!./layout/footer.html')%>
+</body>
+</html>

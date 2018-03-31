@@ -2,7 +2,7 @@
 * @Author: Polylanger
 * @Date:   2018-03-29 23:30:53
 * @Last Modified by:   Polylanger
-* @Last Modified time: 2018-03-30 13:44:35
+* @Last Modified time: 2018-03-30 22:46:21
 */
 
 'use strict'
@@ -13,6 +13,7 @@ const _apec = require('util/apec.js');
 const header = {
 	init: function() {
 		this.bindEvent();
+		this.onload();
 	},
 	// Url 参数回填进搜索框 
 	onload: function() {
