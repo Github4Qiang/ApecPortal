@@ -2,7 +2,7 @@
 * @Author: Polylanger
 * @Date:   2018-03-27 20:46:49
 * @Last Modified by:   Polylanger
-* @Last Modified time: 2018-03-31 16:37:43
+* @Last Modified time: 2018-04-01 20:23:06
 */
 
 'use strict'
@@ -32,6 +32,8 @@ var config = {
 	entry: {								// 唯一入口文件
 		'common'	        : [__dirname + '/src/page/common/index.js'],
 		'index'		        : [__dirname + '/src/page/index/index.js'],
+        'list'             : [__dirname + '/src/page/list/index.js'],
+        'detail'             : [__dirname + '/src/page/detail/index.js'],
 		'user-login'        : [__dirname + '/src/page/user-login/index.js'],
         'user-register'     : [__dirname + '/src/page/user-register/index.js'],
         'user-pass-reset'   : [__dirname + '/src/page/user-pass-reset/index.js'],
@@ -96,6 +98,8 @@ var config = {
 		new ExtractTextPlugin('css/[name].css'), 
 		// 依据 html 模板，生成一个自动引用打包后 js 文件的新 html
 		new HtmlWebpackPlugin(getHtmlConfig('index', '首页')),
+        new HtmlWebpackPlugin(getHtmlConfig('list', '商品列表页')),
+        new HtmlWebpackPlugin(getHtmlConfig('detail', '商品详情页')),
 		new HtmlWebpackPlugin(getHtmlConfig('user-login', '用户登录')), 
         new HtmlWebpackPlugin(getHtmlConfig('user-register', '用户注册')), 
         new HtmlWebpackPlugin(getHtmlConfig('user-pass-reset', '找回密码')), 

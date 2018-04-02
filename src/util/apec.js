@@ -2,7 +2,7 @@
 * @Author: Polylanger
 * @Date:   2018-03-28 20:46:24
 * @Last Modified by:   Polylanger
-* @Last Modified time: 2018-03-31 13:15:26
+* @Last Modified time: 2018-04-01 15:33:59
 */
 
 'use strict'
@@ -49,7 +49,6 @@ var _apec = {
 	// 获取 url 参数：host:port/path/filename?key1=value1&key2=value2
 	getUrlParam: function(name) {
 		var regex = new RegExp('(^|&)' + name + '=([^&]*)(&|$)');
-		console.log(regex);
 		var result = window.location.search.substr(1).match(regex);
 		return result ? decodeURIComponent(result[2])  : null;
 	}, 

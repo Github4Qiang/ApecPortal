@@ -1,0 +1,95 @@
+/*
+* @Author: Polylanger
+* @Date:   2018-04-01 14:57:40
+* @Last Modified by:   Polylanger
+* @Last Modified time: 2018-04-01 22:24:54
+*/
+/* list: 商品列表页面样式 */
+
+/* 排序按钮 */
+.sort-container {
+    overflow: auto;
+}
+.sort-container .sort-item {
+    float: left;
+    display: inline-block;
+    position: relative;
+    padding: 0 8px;
+    height: 24px;
+    line-height: 24px;
+    border: 1px solid #ccc;
+    margin-right: -1px;
+    background: #fff;
+    color: #333;
+    cursor: pointer;
+}
+.sort-container .sort-item.active {
+    background: #c60023;
+    border: 1px solid #c60023;
+    color: #fff;
+}
+.sort-container .sort-item .fa-sort-desc {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+}
+.sort-container .sort-item.asc .fa-sort-desc {
+    opacity: .6;
+}
+.sort-container .sort-item.desc .fa-sort-asc {
+    opacity: .6;
+}
+
+/* 分页列表 */
+.p-list-container {
+    margin-top: 15px;
+    margin-right: -20px;
+    overflow: hidden;
+}
+.p-list-container .p-item {
+    position: relative;
+    width: 180px;
+    float: left;
+    padding: 10px;
+    margin: 0 20px 20px 0;
+    background: #fff;
+    list-style: none;
+}
+.p-list-container .p-item .p-img-container {
+    width: 180px;
+    height: 200px;
+}
+.p-list-container .p-item .p-img-container .p-img {
+    width: 180px;
+    height: 200px;
+}
+.p-list-container .p-item .p-price-container {
+    height: 30px;
+    line-height: 30px;
+}
+.p-list-container .p-item .p-price-container .p-price {
+    font-size: 16px;
+    color: #e7380d;
+}
+.p-list-container .p-item .p-name-container {
+    height: 40px;
+    overflow: hidden;
+}
+.p-list-container .p-item .p-name-container .p-name {
+    line-height: 20px;
+    margin-bottom: 10px;
+    text-decoration: none;
+    color: #666;
+}
+
+/* 错误信息 */
+.error-tips{
+    padding: 0 10px;
+    height: 60px;
+    line-height: 60px;
+    color: #f60;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    background: #eee;
+}

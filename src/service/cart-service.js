@@ -2,7 +2,7 @@
 * @Author: Polylanger
 * @Date:   2018-03-30 11:56:58
 * @Last Modified by:   Polylanger
-* @Last Modified time: 2018-03-30 12:34:28
+* @Last Modified time: 2018-04-01 23:10:06
 */
 
 'use strict'
@@ -24,7 +24,7 @@ const _cart = {
 		_apec.request({
 			url: _apec.getServerUrl('/cart/delete_product.do'),
 			data: {
-				productIds: productIds
+				productIds: productIds, 
 			},
 			success: resolve, 
 			error: reject
