@@ -2,7 +2,7 @@
 * @Author: Polylanger
 * @Date:   2018-03-27 20:46:49
 * @Last Modified by:   Polylanger
-* @Last Modified time: 2018-04-01 20:23:06
+* @Last Modified time: 2018-04-02 12:12:27
 */
 
 'use strict'
@@ -34,6 +34,7 @@ var config = {
 		'index'		        : [__dirname + '/src/page/index/index.js'],
         'list'             : [__dirname + '/src/page/list/index.js'],
         'detail'             : [__dirname + '/src/page/detail/index.js'],
+        'cart'             : [__dirname + '/src/page/cart/index.js'],
 		'user-login'        : [__dirname + '/src/page/user-login/index.js'],
         'user-register'     : [__dirname + '/src/page/user-register/index.js'],
         'user-pass-reset'   : [__dirname + '/src/page/user-pass-reset/index.js'],
@@ -100,6 +101,7 @@ var config = {
 		new HtmlWebpackPlugin(getHtmlConfig('index', '首页')),
         new HtmlWebpackPlugin(getHtmlConfig('list', '商品列表页')),
         new HtmlWebpackPlugin(getHtmlConfig('detail', '商品详情页')),
+        new HtmlWebpackPlugin(getHtmlConfig('cart', '购物车')),
 		new HtmlWebpackPlugin(getHtmlConfig('user-login', '用户登录')), 
         new HtmlWebpackPlugin(getHtmlConfig('user-register', '用户注册')), 
         new HtmlWebpackPlugin(getHtmlConfig('user-pass-reset', '找回密码')), 
