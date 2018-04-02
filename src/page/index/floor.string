@@ -1,0 +1,15 @@
+{{#list}}
+<div class="floor-wrap">
+    <h1 class="floor-title" data-category-id={{id}}>{{name}}</h1>
+    <ul class="floor-list">
+        {{#children}}
+        <li class="floor-item">
+            <a href="./list.html?categoryId={{id}}">
+                <span class="floor-text">{{name}}</span>
+                <img class="floor-img" src="{{imageHost}}{{image}}" alt="{{name}}"/>
+            </a>
+        </li>
+        {{/children}}
+    </ul>
+</div>
+{{/list}}
