@@ -1,0 +1,128 @@
+/*
+* @Author: Polylanger
+* @Date:   2018-04-02 20:44:11
+* @Last Modified by:   Polylanger
+* @Last Modified time: 2018-04-03 11:21:26
+*/
+/* order-confirm: 订单确认页样式 */
+/* 收货地址 */
+.address-container {
+    margin-right: -20px;
+}
+.address-container .address-item {
+    margin: 20px 20px 0 0;
+    padding: 5px 8px;
+    width: 223px;
+    float: left;
+    border: 3px dashed #ccc;
+    cursor: pointer;
+}
+.address-container .address-item.active {
+    border: 3px dashed #c60023;
+}
+.address-container .address-item:hover {
+    background: #fafafa;
+}
+.address-container .address-item .address-title {
+    border-bottom: 1px solid #ddd;
+    overflow: hidden;
+    color: #666;
+    height: 20px;
+    line-height: 20px;
+}
+.address-container .address-item .address-content {
+    margin-top: 5px;
+    height: 40px;
+    line-height: 20px;
+    overflow: hidden;
+    color: #666;
+}
+.address-item .address-operation {
+    text-align: right;
+    visibility: hidden;
+}
+.address-item:hover .address-operation {
+    visibility: visible;
+}
+.address-item .address-operation .link {
+    margin-right: 5px;
+}
+.address-item.add {
+    padding: 13px 8px;
+    text-align: center;
+    color: #ccc;
+}
+.address-item.add .fa {
+    font-size: 50px;
+    line-height: 50px;
+}
+.address-item.add .text {
+    font-size: 12px;
+}
+
+/* 商品清单 */
+.product-table {
+    width: 100%;
+    margin: 10px 0;
+}
+.product-table th, 
+.product-table td {
+    border-bottom: 1px dotted #ddd;
+}
+.product-table .cell-img {
+    width: 10%;
+    padding: 10px;
+    text-align: center;
+}
+.product-table .cell-img .p-img {
+    width: 80px;
+    height: 80px;
+    border: 1px solid #ddd;
+}
+.product-table .cell-info{
+    width: 30%;
+    text-align: left;
+}
+.product-table .cell-price{
+    width: 20%;
+    text-align: center;
+}
+.product-table .cell-count{
+    width: 20%;
+    text-align: center;
+}
+.product-table .cell-total{
+    width: 20%;
+    text-align: center;
+}
+
+/* 提交订单 */
+.submit-container{
+    background: #eee;
+    text-align: right;
+}
+.submit-container .submit-total{
+    font-size: 18px;
+    color: #c60023;
+    font-weight: bold;
+    vertical-align:middle;
+    margin-right: 20px;
+}
+.submit-container .order-submit{
+    height: 50px;
+    line-height: 50px;
+    width: 100px;
+    text-align: center;
+}
+
+/* 错误信息 */
+.err-tip{
+    padding: 0 10px;
+    height: 60px;
+    line-height: 60px;
+    color: #f60;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    background: #eee;
+}

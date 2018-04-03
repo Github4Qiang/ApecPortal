@@ -2,7 +2,7 @@
 * @Author: Polylanger
 * @Date:   2018-04-02 12:12:48
 * @Last Modified by:   Polylanger
-* @Last Modified time: 2018-04-02 15:12:03
+* @Last Modified time: 2018-04-02 21:51:25
 */
 
 'use strict'
@@ -154,10 +154,6 @@ const page = {
     filter: function(data) {
         data.notEmpty = !!data.cartProductVoList.length;
     }, 
-    showCartErrorTips: function(errMsg) {
-        var msg = errMsg ? errMsg : '哪里不对了，刷新一下试试~';
-        $('.page-wrap').html('<p class="err-tip">'+ msg + '</p>');        
-    }, 
     deleteCartProducts: function(productIds) {
         var _this = this;
         _cart.deleteProduct(productIds, function(res) {
@@ -165,6 +161,10 @@ const page = {
         }, function(errMsg) {
             _this.showCartErrorTips(errMsg);
         });
+    }, 
+    showCartErrorTips: function(errMsg) {
+        var msg = errMsg ? errMsg : '哪里不对了，刷新一下试试~';
+        $('.page-wrap').html('<p class="err-tip">'+ msg + '</p>');        
     }
 };
 

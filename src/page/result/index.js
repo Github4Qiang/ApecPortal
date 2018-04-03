@@ -2,7 +2,7 @@
 * @Author: Polylanger
 * @Date:   2018-03-30 14:39:08
 * @Last Modified by:   Polylanger
-* @Last Modified time: 2018-03-30 14:58:43
+* @Last Modified time: 2018-04-03 13:19:40
 */
 
 'use strict'
@@ -18,4 +18,10 @@ $(function() {
 	var $element = $('.' + type + '-success');
 	// 显示对应的提示元素
 	$element.show();
+
+    // 订单支付成功
+    if (type === 'payment') {
+        var $orderNo = $element.find('.order-number');
+        $orderNo.attr('href', $orderNo.attr('href') + _apec.getUrlParam('orderNo'));
+    }
 });

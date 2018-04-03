@@ -1,0 +1,24 @@
+{{#list}}
+{{#isActive}}
+<div class="address-item active" data-address-id="{{id}}">
+{{/isActive}}
+{{^isActive}}
+<div class="address-item" data-address-id="{{id}}">
+{{/isActive}}
+    <div class="address-title">
+        {{receiverProvince}} {{receiverCity}} {{receiverName}} 收
+    </div>
+    <div class="address-content">
+        <p class="address-detail">详细地址：{{receiverAddress}}</p>
+        <p class="address-phone">手机：{{receiverMobile}}</p>
+    </div>
+    <div class="address-operation">
+        <span class="link address-update">编辑</span>
+        <span class="link address-delete">删除</span>
+    </div>
+</div>
+{{/list}}
+<div class="address-item add"> 
+    <i class="fa fa-plus"></i> 
+    <div class="text">使用新地址</div> 
+</div>

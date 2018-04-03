@@ -2,7 +2,7 @@
 * @Author: Polylanger
 * @Date:   2018-03-27 20:46:49
 * @Last Modified by:   Polylanger
-* @Last Modified time: 2018-04-02 12:12:27
+* @Last Modified time: 2018-04-03 14:11:52
 */
 
 'use strict'
@@ -32,15 +32,19 @@ var config = {
 	entry: {								// 唯一入口文件
 		'common'	        : [__dirname + '/src/page/common/index.js'],
 		'index'		        : [__dirname + '/src/page/index/index.js'],
-        'list'             : [__dirname + '/src/page/list/index.js'],
-        'detail'             : [__dirname + '/src/page/detail/index.js'],
-        'cart'             : [__dirname + '/src/page/cart/index.js'],
+        'list'              : [__dirname + '/src/page/list/index.js'],
+        'detail'            : [__dirname + '/src/page/detail/index.js'],
+        'cart'              : [__dirname + '/src/page/cart/index.js'],
+        'order-confirm'     : [__dirname + '/src/page/order-confirm/index.js'],
+        'order-detail'      : [__dirname + '/src/page/order-detail/index.js'],
+        'order-list'        : [__dirname + '/src/page/order-list/index.js'],
+        'payment'           : [__dirname + '/src/page/payment/index.js'],
 		'user-login'        : [__dirname + '/src/page/user-login/index.js'],
         'user-register'     : [__dirname + '/src/page/user-register/index.js'],
         'user-pass-reset'   : [__dirname + '/src/page/user-pass-reset/index.js'],
         'user-center'       : [__dirname + '/src/page/user-center/index.js'],
         'user-center-update': [__dirname + '/src/page/user-center-update/index.js'],
-        'user-pass-update': [__dirname + '/src/page/user-pass-update/index.js'],
+        'user-pass-update'  : [__dirname + '/src/page/user-pass-update/index.js'],
         'result'            : [__dirname + '/src/page/result/index.js']
 	}, 
 	output: {
@@ -102,6 +106,10 @@ var config = {
         new HtmlWebpackPlugin(getHtmlConfig('list', '商品列表页')),
         new HtmlWebpackPlugin(getHtmlConfig('detail', '商品详情页')),
         new HtmlWebpackPlugin(getHtmlConfig('cart', '购物车')),
+        new HtmlWebpackPlugin(getHtmlConfig('order-confirm', '订单确认')),
+        new HtmlWebpackPlugin(getHtmlConfig('order-list', '订单列表')),
+        new HtmlWebpackPlugin(getHtmlConfig('order-detail', '订单详情')),
+        new HtmlWebpackPlugin(getHtmlConfig('payment', '订单支付')),
 		new HtmlWebpackPlugin(getHtmlConfig('user-login', '用户登录')), 
         new HtmlWebpackPlugin(getHtmlConfig('user-register', '用户注册')), 
         new HtmlWebpackPlugin(getHtmlConfig('user-pass-reset', '找回密码')), 

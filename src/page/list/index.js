@@ -2,7 +2,7 @@
 * @Author: Polylanger
 * @Date:   2018-04-01 14:57:34
 * @Last Modified by:   Polylanger
-* @Last Modified time: 2018-04-01 19:16:30
+* @Last Modified time: 2018-04-03 14:56:44
 */
 
 'use strict';
@@ -103,6 +103,7 @@ const page = {
         });
     }, 
     loadPagination: function(pageInfo) {
+        var _this = this;
         this.pagination ? '' : (this.pagination = new Pagination());
         this.pagination.render($.extend({}, pageInfo, {
             container: $('.pagination'), 
@@ -111,7 +112,6 @@ const page = {
                 _this.loadList();
             }
         }));
-
     }
 };
 
