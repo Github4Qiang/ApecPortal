@@ -2,7 +2,7 @@
 * @Author: Polylanger
 * @Date:   2018-03-27 20:46:49
 * @Last Modified by:   Polylanger
-* @Last Modified time: 2018-04-03 14:11:52
+* @Last Modified time: 2018-04-04 10:52:57
 */
 
 'use strict'
@@ -20,6 +20,7 @@ var getHtmlConfig = function(name, title){
             template: __dirname + "/src/view/" + name + ".html", 	// 本地模板文件的位置
             filename: "view/" + name + ".html", 					// 相对于 config.output.path 即：/dist/
             title: title, 
+            favicon: './favicon.ico', 
             inject: true, 				// 所有 JavaScript 静态资源插入到 body 元素的底部
             hash: true, 				// 为所有注入的静态资源添加 webpack 每次编译产生的唯一 hash 值
             chunks: ["common", name]	// 允许插入到模板中的 trunks
@@ -45,11 +46,12 @@ var config = {
         'user-center'       : [__dirname + '/src/page/user-center/index.js'],
         'user-center-update': [__dirname + '/src/page/user-center-update/index.js'],
         'user-pass-update'  : [__dirname + '/src/page/user-pass-update/index.js'],
-        'result'            : [__dirname + '/src/page/result/index.js']
+        'result'            : [__dirname + '/src/page/result/index.js'], 
+        'about'            : [__dirname + '/src/page/about/index.js']
 	}, 
 	output: {
 		path: __dirname + '/dist', 			// 打包后的文件路径
-		publicPath : '/dist',				// webpack-dev-server 访问文件时的路径
+		publicPath : 'dev' === WEBPACK_ENV ? '/dist/' : '//s.apec.com/dist/',				// webpack-dev-server 访问文件时的路径
 		filename: 'js/[name].js'			// 打包后输出文件的文件名
 	}, 
 	externals: {
@@ -57,6 +59,18 @@ var config = {
 	}, 
 	// Loaders 
 	module: { rules:[
+        {
+            test: /(\.jsx|\.js)$/,
+            use: {
+                loader: "babel-loader",
+                options: {
+                    presets: [
+                        "env", "react"
+                    ]
+                }
+            },
+            exclude: /node_modules/
+        }, 
 		// 处理 CSS 的 Loader
         {
             test: /\.css$/,
@@ -99,6 +113,8 @@ var config = {
 			name: 'common', 
 			filename: 'js/base.js'
 		}), 
+        // 压缩 js 代码
+        new webpack.optimize.UglifyJsPlugin(), 
 		// 分离 CSS 单独打包
 		new ExtractTextPlugin('css/[name].css'), 
 		// 依据 html 模板，生成一个自动引用打包后 js 文件的新 html
@@ -116,11 +132,12 @@ var config = {
         new HtmlWebpackPlugin(getHtmlConfig('user-center', '个人中心')), 
         new HtmlWebpackPlugin(getHtmlConfig('user-center-update', '修改个人信息')), 
         new HtmlWebpackPlugin(getHtmlConfig('user-pass-update', '修改密码')), 
-        new HtmlWebpackPlugin(getHtmlConfig('result', '操作结果'))
+        new HtmlWebpackPlugin(getHtmlConfig('result', '操作结果')), 
+        new HtmlWebpackPlugin(getHtmlConfig('about', '关于 APEC'))
 	]
 };
 
-if('dev' == WEBPACK_ENV){
+if('dev' === WEBPACK_ENV){
 	config.entry.common.push('webpack-dev-server/client?http://localhost.:8088')
 }
 
