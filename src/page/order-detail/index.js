@@ -2,7 +2,7 @@
 * @Author: Polylanger
 * @Date:   2018-04-03 14:13:25
 * @Last Modified by:   Polylanger
-* @Last Modified time: 2018-04-03 16:34:33
+* @Last Modified time: 2018-04-04 15:13:55
 */
 'use strict'
 // order-detail: 订单详情页
@@ -55,8 +55,8 @@ const page = {
         });
     }, 
     orderDetailFilter(data) {
-        data.needPay = data.status == 10 ; 
-        data.isCancelable = data.status == 10 ; 
+        data.needPay = data.status === 10 ; 
+        data.isCancelable = data.status === 10 ; 
     }, 
     showOderDetailErrorTips: function(errMsg) {
         var msg = errMsg ? errMsg : '订单详情加载失败';
