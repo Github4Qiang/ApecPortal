@@ -2,7 +2,7 @@
 * @Author: Polylanger
 * @Date:   2018-03-27 20:46:49
 * @Last Modified by:   Polylanger
-* @Last Modified time: 2018-04-04 15:23:33
+* @Last Modified time: 2018-04-07 16:40:33
 */
 
 'use strict'
@@ -15,10 +15,10 @@ const WEBPACK_ENV = process.env.WEBPACK_ENV || 'dev';
 console.log(WEBPACK_ENV);
 
 // 获取 html-webpack-plugin 参数的方法
-var getHtmlConfig = function(name, title){
+var getCustomerHtmlConfig = function(name, title){
 	return {
-            template: __dirname + "/src/view/" + name + ".html", 	// 本地模板文件的位置
-            filename: "view/" + name + ".html", 					// 相对于 config.output.path 即：/dist/
+            template: __dirname + "/src/view/customer/" + name + ".html", 	// 本地模板文件的位置
+            filename: "view/customer/" + name + ".html", 					// 相对于 config.output.path 即：/dist/
             title: title, 
             favicon: './favicon.ico', 
             inject: true, 				// 所有 JavaScript 静态资源插入到 body 元素的底部
@@ -26,32 +26,48 @@ var getHtmlConfig = function(name, title){
             chunks: ["common", name]	// 允许插入到模板中的 trunks
     	};
 }
+// 获取 店家 html-webpack-plugin 参数的方法
+var getProducerHtmlConfig = function(name, title){
+    return {
+            template: __dirname + "/src/view/producer/" + name + ".html",    // 本地模板文件的位置
+            filename: "view/producer/" + name + ".html",                     // 相对于 config.output.path 即：/dist/
+            title: title, 
+            favicon: './favicon.ico', 
+            inject: true,               // 所有 JavaScript 静态资源插入到 body 元素的底部
+            hash: true,                 // 为所有注入的静态资源添加 webpack 每次编译产生的唯一 hash 值
+            chunks: ["common", name]    // 允许插入到模板中的 trunks
+        };
+}
 
 // webpack config
 var config = {
 	// webpack 基本配置
 	entry: {								// 唯一入口文件
 		'common'	        : [__dirname + '/src/page/common/index.js'],
-		'index'		        : [__dirname + '/src/page/index/index.js'],
-        'list'              : [__dirname + '/src/page/list/index.js'],
-        'detail'            : [__dirname + '/src/page/detail/index.js'],
-        'cart'              : [__dirname + '/src/page/cart/index.js'],
-        'order-confirm'     : [__dirname + '/src/page/order-confirm/index.js'],
-        'order-detail'      : [__dirname + '/src/page/order-detail/index.js'],
-        'order-list'        : [__dirname + '/src/page/order-list/index.js'],
-        'payment'           : [__dirname + '/src/page/payment/index.js'],
-		'user-login'        : [__dirname + '/src/page/user-login/index.js'],
-        'user-register'     : [__dirname + '/src/page/user-register/index.js'],
-        'user-pass-reset'   : [__dirname + '/src/page/user-pass-reset/index.js'],
-        'user-center'       : [__dirname + '/src/page/user-center/index.js'],
-        'user-center-update': [__dirname + '/src/page/user-center-update/index.js'],
-        'user-pass-update'  : [__dirname + '/src/page/user-pass-update/index.js'],
-        'result'            : [__dirname + '/src/page/result/index.js'], 
-        'about'            : [__dirname + '/src/page/about/index.js']
+		'index'		        : [__dirname + '/src/page/customer/index/index.js'],
+        'list'              : [__dirname + '/src/page/customer/list/index.js'],
+        'detail'            : [__dirname + '/src/page/customer/detail/index.js'],
+        'cart'              : [__dirname + '/src/page/customer/cart/index.js'],
+        'order-confirm'     : [__dirname + '/src/page/customer/order-confirm/index.js'],
+        'order-detail'      : [__dirname + '/src/page/customer/order-detail/index.js'],
+        'order-list'        : [__dirname + '/src/page/customer/order-list/index.js'],
+        'payment'           : [__dirname + '/src/page/customer/payment/index.js'],
+		'user-login'        : [__dirname + '/src/page/customer/user-login/index.js'],
+        'user-register'     : [__dirname + '/src/page/customer/user-register/index.js'],
+        'user-pass-reset'   : [__dirname + '/src/page/customer/user-pass-reset/index.js'],
+        'user-center'       : [__dirname + '/src/page/customer/user-center/index.js'],
+        'user-center-update': [__dirname + '/src/page/customer/user-center-update/index.js'],
+        'user-pass-update'  : [__dirname + '/src/page/customer/user-pass-update/index.js'],
+        'result'            : [__dirname + '/src/page/customer/result/index.js'], 
+        'about'             : [__dirname + '/src/page/customer/about/index.js'],
+
+        'open-shop'         : [__dirname + '/src/page/producer/open-shop/index.js'],
+        'producer-center'   : [__dirname + '/src/page/producer/producer-center/index.js'],
 	}, 
 	output: {
 		path: __dirname + '/dist', 			// 打包后的文件路径
-		publicPath : 'dev' === WEBPACK_ENV ? '/dist/' : '//s.apec.com/dist/',				// webpack-dev-server 访问文件时的路径
+        publicPath : '/dist/',               // webpack-dev-server 访问文件时的路径
+		// publicPath : 'dev' === WEBPACK_ENV ? '/dist/' : '//s.apec.com/dist/',				// webpack-dev-server 访问文件时的路径
 		filename: 'js/[name].js'			// 打包后输出文件的文件名
 	}, 
 	externals: {
@@ -59,18 +75,18 @@ var config = {
 	}, 
 	// Loaders 
 	module: { rules:[
-        {
-            test: /(\.jsx|\.js)$/,
-            use: {
-                loader: "babel-loader",
-                options: {
-                    presets: [
-                        "env", "react"
-                    ]
-                }
-            },
-            exclude: /node_modules/
-        }, 
+        // {
+        //     test: /(\.jsx|\.js)$/,
+        //     use: {
+        //         loader: "babel-loader",
+        //         options: {
+        //             presets: [
+        //                 "env", "react"
+        //             ]
+        //         }
+        //     },
+        //     exclude: /node_modules/
+        // }, 
 		// 处理 CSS 的 Loader
         {
             test: /\.css$/,
@@ -114,26 +130,29 @@ var config = {
 			filename: 'js/base.js'
 		}), 
         // 压缩 js 代码
-        new webpack.optimize.UglifyJsPlugin(), 
+        // new webpack.optimize.UglifyJsPlugin(), 
 		// 分离 CSS 单独打包
 		new ExtractTextPlugin('css/[name].css'), 
 		// 依据 html 模板，生成一个自动引用打包后 js 文件的新 html
-		new HtmlWebpackPlugin(getHtmlConfig('index', '首页')),
-        new HtmlWebpackPlugin(getHtmlConfig('list', '商品列表页')),
-        new HtmlWebpackPlugin(getHtmlConfig('detail', '商品详情页')),
-        new HtmlWebpackPlugin(getHtmlConfig('cart', '购物车')),
-        new HtmlWebpackPlugin(getHtmlConfig('order-confirm', '订单确认')),
-        new HtmlWebpackPlugin(getHtmlConfig('order-list', '订单列表')),
-        new HtmlWebpackPlugin(getHtmlConfig('order-detail', '订单详情')),
-        new HtmlWebpackPlugin(getHtmlConfig('payment', '订单支付')),
-		new HtmlWebpackPlugin(getHtmlConfig('user-login', '用户登录')), 
-        new HtmlWebpackPlugin(getHtmlConfig('user-register', '用户注册')), 
-        new HtmlWebpackPlugin(getHtmlConfig('user-pass-reset', '找回密码')), 
-        new HtmlWebpackPlugin(getHtmlConfig('user-center', '个人中心')), 
-        new HtmlWebpackPlugin(getHtmlConfig('user-center-update', '修改个人信息')), 
-        new HtmlWebpackPlugin(getHtmlConfig('user-pass-update', '修改密码')), 
-        new HtmlWebpackPlugin(getHtmlConfig('result', '操作结果')), 
-        new HtmlWebpackPlugin(getHtmlConfig('about', '关于 APEC'))
+		new HtmlWebpackPlugin(getCustomerHtmlConfig('index', '首页')),
+        new HtmlWebpackPlugin(getCustomerHtmlConfig('list', '商品列表页')),
+        new HtmlWebpackPlugin(getCustomerHtmlConfig('detail', '商品详情页')),
+        new HtmlWebpackPlugin(getCustomerHtmlConfig('cart', '购物车')),
+        new HtmlWebpackPlugin(getCustomerHtmlConfig('order-confirm', '订单确认')),
+        new HtmlWebpackPlugin(getCustomerHtmlConfig('order-list', '订单列表')),
+        new HtmlWebpackPlugin(getCustomerHtmlConfig('order-detail', '订单详情')),
+        new HtmlWebpackPlugin(getCustomerHtmlConfig('payment', '订单支付')),
+		new HtmlWebpackPlugin(getCustomerHtmlConfig('user-login', '用户登录')), 
+        new HtmlWebpackPlugin(getCustomerHtmlConfig('user-register', '用户注册')), 
+        new HtmlWebpackPlugin(getCustomerHtmlConfig('user-pass-reset', '找回密码')), 
+        new HtmlWebpackPlugin(getCustomerHtmlConfig('user-center', '个人中心')), 
+        new HtmlWebpackPlugin(getCustomerHtmlConfig('user-center-update', '修改个人信息')), 
+        new HtmlWebpackPlugin(getCustomerHtmlConfig('user-pass-update', '修改密码')), 
+        new HtmlWebpackPlugin(getCustomerHtmlConfig('result', '操作结果')), 
+        new HtmlWebpackPlugin(getCustomerHtmlConfig('about', '关于 APEC')), 
+
+        new HtmlWebpackPlugin(getProducerHtmlConfig('open-shop', '开店申请')),
+        new HtmlWebpackPlugin(getProducerHtmlConfig('producer-center', '卖家中心')),
 	]
 };
 

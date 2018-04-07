@@ -2,7 +2,7 @@
 * @Author: Polylanger
 * @Date:   2018-03-29 23:30:53
 * @Last Modified by:   Polylanger
-* @Last Modified time: 2018-03-30 22:46:21
+* @Last Modified time: 2018-04-06 16:43:00
 */
 
 'use strict'
@@ -28,7 +28,7 @@ const header = {
 		var keyword = $.trim($('#search-input').val());
 		// 输入框中有内容，则跳转 list 页执行搜索
 		if (keyword) {
-			window.location.href = './list.html?keyword=' + keyword;
+			window.location.href = '../customer/list.html?keyword=' + keyword;
 		} 
 		// 输入框没有内容，则回到主页
 		else {

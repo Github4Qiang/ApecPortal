@@ -1,0 +1,18 @@
+{{#list}}
+    <li class="p-item">
+        <div class="p-img-container">
+            <a class="link" href="../customer/detail.html?productId={{id}}" target="_blank">
+                <img class="p-img" src="{{imageHost}}{{mainImage}}" alt="{{name}}" />
+            </a>
+        </div>
+        <div class="p-price-container">
+            <span class="p-price">￥{{price}}</span>
+        </div>
+        <div class="p-name-container">
+            <a class="p-name" href="../customer/detail.html?productId={{id}}" target="_blank">{{name}}</a>
+        </div>
+    </li>
+{{/list}}
+{{^list}}
+    <p class="error-tips">很抱歉，实在找不到您要的商品</p>
+{{/list}}

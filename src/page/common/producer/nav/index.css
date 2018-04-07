@@ -1,33 +1,33 @@
 /*
 * @Author: Polylanger
-* @Date:   2018-03-29 22:25:41
+* @Date:   2018-04-05 20:10:13
 * @Last Modified by:   Polylanger
-* @Last Modified time: 2018-04-05 19:20:51
+* @Last Modified time: 2018-04-05 20:10:45
 */
 
 .nav {
-	background: #eee;
-	height: 30px;
-	line-height: 30px;
+    background: #eee;
+    height: 30px;
+    line-height: 30px;
 }
 /* 用户部分 */
 .nav .user {
-	float: left;
+    float: left;
 }
 .nav .user.login {
-	display: none;
+    display: none;
 }
 .nav .user .link {
-	margin-right: 5px;
+    margin-right: 5px;
 }
 
 /* 导航链接部分 */
 .nav .nav-list {
-	float: right;
+    float: right;
 }
 .nav .nav-list .nav-item {
-	display: inline-block;
-	margin-left: 5px;
+    display: inline-block;
+    margin-left: 5px;
 }
 .nav .nav-list .nav-item.open {
     display: none;

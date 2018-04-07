@@ -1,0 +1,31 @@
+<div class="shop-info-container">
+    <div class="form-line">
+        <label class="label" for="shopName">店&nbsp;名：</label>
+        <input class="input" id="shopName" autocomplete="off">
+    </div>
+    <div class="form-line">
+        <label class="label" for="producerProvince">省&nbsp;份：</label>
+        <input class="input" id="producerProvince" autocomplete="off">
+    </div>
+    <div class="form-line">
+        <label class="label" for="producerCity">城&nbsp;市：</label>
+        <input class="input" id="producerCity" autocomplete="off">
+    </div>
+    <div class="form-line">
+        <label class="label" for="producerDistrict">区&nbsp;县：</label>
+        <input class="input" id="producerDistrict" autocomplete="off">
+    </div>
+    <div class="form-line">
+        <label class="label" for="producerAddress">详细地址：</label>
+        <input class="input" id="producerAddress" autocomplete="off">
+    </div>
+    <div class="form-line">
+        <label class="label" for="serverPhone">服务电话：</label>
+        <input class="input" id="serverPhone" autocomplete="off">
+    </div>
+    <div class="form-line">
+        <label class="label" for="bankCard">银行卡号：</label>
+        <input class="input" id="bankCard" autocomplete="off">
+    </div>
+    <span class="btn btn-submit">提交</span>
+</div>

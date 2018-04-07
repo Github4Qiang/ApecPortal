@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%= require('html-loader!../layout/head-common.html')%>
+    <title>
+        <%= htmlWebpackPlugin.options.title%> — APEC农产品电商
+    </title>
+</head>
+
+<body>
+    <%= require('html-loader!../layout/producer/nav.html')%>
+    <%= require('html-loader!../layout/producer/header-simple.html')%>
+    <div class="page-wrap w">
+        <div class="content with-nav">
+            <div class="page-title">入驻流程</div>
+            <!-- <div class="loading"></div> -->
+            <div class="step-container">
+                <div class="step-item step-agreement active">
+                    <div class="open-icon">
+                        <i class="fa fa-drivers-license open-icon"></i>
+                    </div>
+                    <div class="step-text">签署入驻协议</div>
+                </div>
+                <span class="next-sign">></span>
+                <div class="step-item step-shop-info">
+                    <div class="open-icon">
+                        <i class="fa fa-pencil-square-o"></i>
+                    </div>
+                    <div class="step-text">商家信息提交</div>
+                </div>
+                <span class="next-sign">></span>
+                <div class="step-item step-verify">
+                    <div class="open-icon">
+                        <i class="fa fa-eye"></i>
+                    </div>
+                    <div class="step-text">平台资质审核</div>
+                </div>
+                <span class="next-sign">></span>
+                <div class="step-item step-activate">
+                    <div class="open-icon">
+                        <i class="fa fa-magic"></i>
+                    </div>
+                    <div class="step-text">店铺开通</div>
+                </div>
+            </div>
+            <div class="open-shop-container">
+            </div>
+        </div>
+    </div>
+    <%= require('html-loader!../layout/footer.html')%>
+</body>
+
+</html>

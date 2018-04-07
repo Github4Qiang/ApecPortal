@@ -2,7 +2,7 @@
 * @Author: Polylanger
 * @Date:   2018-03-29 22:25:48
 * @Last Modified by:   Polylanger
-* @Last Modified time: 2018-03-30 12:55:48
+* @Last Modified time: 2018-04-06 16:43:38
 */
 
 'use strict'
@@ -11,12 +11,14 @@ require('./index.css');
 const _apec = require('util/apec.js');
 const _user = require('service/user-service.js');
 const _cart = require('service/cart-service.js');
+const _producer = require('service/producer/producer-service.js');
 
 const nav = {
 	init: function() {
 		this.bindEvent();
 		this.loadUserInfo();
 		this.loadCartCount();
+		this.loadShopInfo();
 		return this;
 	}, 
 	// 为导航链接绑定 URL
@@ -27,7 +29,7 @@ const nav = {
 		});
 		// “注册”点击事件
 		$('.js-register').click(function() {
-			window.location.href = './user-register.html';
+			window.location.href = '../customer/user-register.html';
 		});
 		// “退出”点击事件
 		$('.js-logout').click(function() {
@@ -55,6 +57,14 @@ const nav = {
 			$('.nav .cart-count').text(res || 0);
 		}, function(errMsg) {
 			$('.nav .cart-count').text(0);
+		});
+	}, 
+	loadShopInfo: function() {
+		_producer.checkOpenShop(function(res) {
+			$('.nav-item.not-open').hide()
+				.siblings('.nav-item.open').show().css('display', 'inline-block');
+		}, function(errMsg) {
+			// do nothing
 		});
 	}
 };

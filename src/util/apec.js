@@ -2,7 +2,7 @@
 * @Author: Polylanger
 * @Date:   2018-03-28 20:46:24
 * @Last Modified by:   Polylanger
-* @Last Modified time: 2018-04-01 15:33:59
+* @Last Modified time: 2018-04-06 17:29:29
 */
 
 'use strict'
@@ -11,10 +11,13 @@ const Hogan = require('hogan.js');
 
 // 配置属性
 const conf = {
-	serverHost: '' // 服务器域名
+	serverHost: '',  			// 服务器域名
+	producerServerHost: '', 	// 卖家对应域名
+	adminServerHost: ''			// 管理员对应域名
 };
 
 var _apec = {
+	// 买家专用 request 方法
 	request: function(param) {
 		var _this = this;
 		$.ajax({
@@ -28,7 +31,7 @@ var _apec = {
 					typeof param.success === 'function' && param.success(res.data, res.msg);
 				}
 				// 没有登录状态，需要强制登录
-				else if (10 === res.status) {
+				else if (5 === res.status) {
 					_this.doLogin();
 				}
 				// 请求数据错误
@@ -42,7 +45,7 @@ var _apec = {
 			}
 		});
 	}, 
-	// 获取服务器地址
+	// 买家专用 获取服务器地址
 	getServerUrl: function(path) {
 		return conf.serverHost + path;
 	},
@@ -84,12 +87,57 @@ var _apec = {
 	}, 
 	// 统一登录处理
 	doLogin: function() {
-		window.location.href = './user-login.html?redirect=' + encodeURIComponent(window.location.href);
+		window.location.href = '../customer/user-login.html?redirect=' + encodeURIComponent(window.location.href);
 	}, 
 	// 统一返回主页
 	goHome: function() {
-		window.location.href = './index.html';
-	}
+		window.location.href = '../customer/index.html';
+	}, 
+
+	// 卖家专用 request 方法
+	producerRequest: function(param) {
+		var _this = this;
+		$.ajax({
+			type 	: param.method 	|| 'get', 
+			url 	: param.url 	|| '', 
+			dataType: param.type 	|| 'json', 
+			data 	: param.data 	|| '', 
+			success : function(res) {
+				// 请求成功
+				if (0 === res.status) {
+					typeof param.success === 'function' && param.success(res.data, res.msg);
+				}
+				// 没有登录状态，需要强制登录
+				else if (5 === res.status) {
+					_this.doLogin();
+				}
+				// 卖家尚未提交申请信息，转向 open-shop-agreement
+				else if (9 === res.status) {
+					window.location.href = '../producer/open-shop.html?step=agreement';
+				}
+				// 申请信息正在等待管理员审核，转向 open-shop-verify
+				else if (10 === res.status) {
+					window.location.href = '../producer/open-shop.html?step=verify';
+				}
+				// 店铺审核成功，等待激活，转向 open-shop-activate
+				else if (11 === res.status) {
+					window.location.href = '../producer/open-shop.html?step=activate';
+				}
+				// 请求数据错误
+				else if (1 === res.status) {
+					typeof param.error === 'function' && param.error(res.msg);
+				}
+			}, 
+			// 请求失败
+			error 	: function(err) {
+				typeof param.error === 'function' && param.error(err.status);
+			}
+		});
+	}, 
+	// 卖家专用 获取服务器地址
+	getProducerServerUrl: function(path) {
+		return conf.producerServerHost + path;
+	},
 };
 
 module.exports = _apec;

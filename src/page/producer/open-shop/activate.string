@@ -1,0 +1,7 @@
+<h1 class="result-title">
+    店铺审核通过，请激活！
+</h1>
+<div class="result-content">
+    <a class="link" href="../customer/index.html">不激活，返回首页！</a>
+    <a class="link btn-activate">激活 >></a>
+</div>

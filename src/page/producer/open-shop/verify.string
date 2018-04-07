@@ -1,0 +1,7 @@
+<h1 class="result-title">
+    店铺信息提交成功，请等待管理员审核！
+</h1>
+<div class="result-content">
+    <a class="link" href="../customer/index.html">返回购物</a>
+    <a class="link" href="../customer/about.html">关于APEC</a>
+</div>
