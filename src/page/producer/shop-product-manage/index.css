@@ -1,0 +1,103 @@
+/*
+* @Author: Polylanger
+* @Date:   2018-04-07 18:53:48
+* @Last Modified by:   Polylanger
+* @Last Modified time: 2018-04-12 17:36:14
+*/
+.panel-title {
+    overflow: hidden;
+}
+.panel-title .title{
+    float: left;
+    margin: 10px 0;
+}
+.panel-title .create-product {
+    float: right;
+}
+.panel-title .create-product .btn {
+    font-size: 14px;
+    height: 40px;
+    line-height: 40px;
+}
+
+/* product-manage: 商品管理页面样式*/
+.product-table {
+    width: 100%;
+    border-collapse: collapse;
+    border: 1px solid #ebebeb;
+    margin-bottom: 10px;
+}
+
+/* 标题栏样式 */
+.product-table {
+    width: 100%;
+    margin: 10px 0;
+}
+.product-table th, 
+.product-table td {
+    border-bottom: 1px dotted #ddd;
+}
+.product-header {
+    background: #eee;
+}
+.product-header .product-cell {
+    height: 40px;
+    line-height: 40px;
+}
+
+
+/* 商品信息样式 */
+/* 商品信息中的图片样式 */
+.product-table .cell-img {
+    width: 10%;
+    text-align: left;
+}
+.product-table .cell-img .p-img {
+    margin: 10px 0;
+    width: 80px;
+    height: 80px;
+    border: 1px solid #ddd;
+}
+/* 商品信息中的文字描述样式 */
+.product-table .cell-info {
+    width: 35%;
+    text-align: left;
+}
+/* 商品信息的标题栏样式 */
+.product-header .cell-info {
+    width: 45%;
+    padding-left: 106px;
+}
+/* 商品单价 */
+.product-table .cell-price {
+    width: 10%;
+    text-align: center;
+}
+/* 商品数量 */
+.product-table .cell-count {
+    width: 15%;
+    text-align: center;
+}
+
+/* 商品总价 */
+.product-table .cell-category {
+    width: 14%;
+    text-align: center;
+}
+/* 对商品的操作 */
+.product-table .cell-operation {
+    width: 10%;
+    text-align: center;
+}
+
+/* 错误信息 */
+.err-tip{
+    padding: 0 10px;
+    height: 60px;
+    line-height: 60px;
+    color: #f60;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    background: #eee;
+}

@@ -2,7 +2,7 @@
 * @Author: Polylanger
 * @Date:   2018-04-02 20:44:11
 * @Last Modified by:   Polylanger
-* @Last Modified time: 2018-04-03 11:21:26
+* @Last Modified time: 2018-04-12 15:01:18
 */
 /* order-confirm: 订单确认页样式 */
 /* 收货地址 */
@@ -37,26 +37,26 @@
     overflow: hidden;
     color: #666;
 }
-.address-item .address-operation {
+.address-container .address-item .address-operation {
     text-align: right;
     visibility: hidden;
 }
-.address-item:hover .address-operation {
+.address-container .address-item:hover .address-operation {
     visibility: visible;
 }
-.address-item .address-operation .link {
+.address-container .address-item .address-operation .link {
     margin-right: 5px;
 }
-.address-item.add {
+.address-container .address-item.add {
     padding: 13px 8px;
     text-align: center;
     color: #ccc;
 }
-.address-item.add .fa {
+.address-container .address-item.add .fa {
     font-size: 50px;
     line-height: 50px;
 }
-.address-item.add .text {
+.address-container .address-item.add .text {
     font-size: 12px;
 }
 
@@ -69,6 +69,22 @@
 .product-table td {
     border-bottom: 1px dotted #ddd;
 }
+.product-table .shop-header {
+    background: #eee;
+    height: 40px;
+    line-height: 40px;
+}
+.product-table .shop-header .cell-shop-name {
+    width: 80%;
+    padding-left: 100px;
+}
+.product-table .shop-header .cell-shop-total {
+    width: 20%;
+    text-align: center;
+    color: #c60023;
+    font-size: 16px;
+}
+
 .product-table .cell-img {
     width: 10%;
     padding: 10px;
@@ -125,4 +141,81 @@
     font-weight: bold;
     text-align: center;
     background: #eee;
+}
+
+/* modal */
+.modal{
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0,0,0,.4);
+    z-index: 1000;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+.modal .modal-container{
+    width: 700px;
+    margin: 100px auto;
+    background: #fff;
+    border-radius: 4px;
+    
+}
+.modal .modal-header{
+    height: 60px;
+    line-height: 60px;
+    vertical-align: middle;
+    border-bottom: 1px solid #ddd;
+}
+.modal .modal-title{
+    display: inline-block;
+    font-size: 16px;
+    padding-left: 15px;
+}
+.modal .modal-header .close{
+    font-size: 16px;
+    margin: 0 0 0 555px;
+    padding: 10px;
+    cursor: pointer;
+    color: #ccc;
+
+}
+.modal .modal-header .close:hover{
+    color: #000;
+}
+.modal .modal-body{
+    padding: 15px;
+}
+
+/* form */
+.form .form-line{
+    margin: 5px 0;
+    overflow: hidden;
+
+}
+.form .form-line .label{
+    display: block;
+    float: left;
+    width: 80px;
+    text-align: right;
+    height: 30px;
+    line-height: 30px;
+    margin-right: 10px;
+    cursor: pointer;
+    
+}
+.form .form-line .form-item{
+    padding:  0 5px;
+    height: 30px;
+    line-height: 30px;
+    outline: none;
+    margin-right: 10px;
+
+}
+.form .form-line .btn{
+    margin-left: 90px;
+    height: 30px;
+    line-height: 30px;
+    font-size: 13px;
 }

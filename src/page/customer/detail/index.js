@@ -2,10 +2,10 @@
 * @Author: Polylanger
 * @Date:   2018-04-01 20:23:51
 * @Last Modified by:   Polylanger
-* @Last Modified time: 2018-04-06 16:48:17
+* @Last Modified time: 2018-04-08 17:41:09
 */
 'use strict';
-// list: 商品列表页
+// detail: 商品详情
 require('./index.css')
 
 require('page/common/nav/index.js');

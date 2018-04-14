@@ -1,0 +1,50 @@
+<div class="form-item">
+    <label class="form-label" for="name">商品名称：</label>
+    <input class="form-content" id="name" placeholder="请输入商品名称" value="{{name}}" data-product-id="{{id}}"></input>
+</div>
+<div class="form-item">
+    <label class="form-label" for="subtitle">商品描述：</label>
+    <input class="form-content" id="subtitle" placeholder="请输入商品描述" value="{{subtitle}}"></input>
+</div>
+<div class="form-item">
+    <label class="form-label">商品类别：</label>
+    <select id="level-1-category">
+        <option value="">请选择</option>
+    </select>
+    <select id="level-2-category">
+        <option value="">请选择</option>
+    </select>
+    <select id="level-3-category">
+        <option value="">请选择</option>
+    </select>
+</div>
+<div class="form-item">
+    <label class="form-label" for="price">商品单价：</label>
+    <input class="form-content" id="price" placeholder="请输入商品单价" value="{{price}}"></input> &nbsp;元
+</div>
+<div class="form-item">
+    <label class="form-label" for="stock">商品库存：</label>
+    <input class="form-content" id="stock" placeholder="请输入商品库存" value="{{stock}}"></input>
+</div>
+<div class="form-item image-container">
+    <label class="form-label">商品图片：</label>
+    <div class="image-list">
+        {{#subImages}}
+        <div class="image-item">
+            <img class="img" src="{{.}}"></img>
+            <i class="fa fa-close fa-fw"></i>
+        </div>
+        {{/subImages}}
+        {{#showAdd}}
+        <div class="image-add">
+            <i class="fa fa-plus"></i> 
+            <div class="text">添加图片</div> 
+        </div>
+        <input type="file" name="add-image" id="add-image" >
+        {{/showAdd}}
+    </div>
+</div>
+<textarea id="rich-editor"></textarea>
+<div class="submit-btn-container">
+    <span class="btn btn-submit">提交</span>
+</div>

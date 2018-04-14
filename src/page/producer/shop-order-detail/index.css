@@ -1,0 +1,79 @@
+/*
+* @Author: Polylanger
+* @Date:   2018-04-14 15:30:09
+* @Last Modified by:   Polylanger
+* @Last Modified time: 2018-04-14 17:53:09
+*/
+/* order-detail: 订单详情页样式 */
+/*订单信息*/
+.order-info .text-line{
+    height: 30px;
+    line-height: 30px;
+}
+.text-line .text {
+    margin-right: 30px;
+}
+.order-info .btn{
+    width: 80px;
+    margin-right: 20px;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    font-size: 12px;
+    padding: 0;
+}
+
+/* 商品清单 */
+.product-table {
+    width: 100%;
+    margin: 10px 0;
+}
+.product-table th, 
+.product-table td {
+    border-bottom: 1px dotted #ddd;
+}
+/* 店铺信息样式 */
+.product-table .shop-order-info{
+    background: #eee;
+    padding: 10px;
+    color: #999;
+}
+.product-table .shop-order-info .order-text{
+    margin-right: 25px;
+}
+/* 订单号样式 */
+.product-table .shop-order-info .order-no{
+    font-weight: bold;
+}
+/* 订单总价样式 */
+.product-table .shop-order-info .order-total{
+    font-size: 14px;
+    color: #c60023;
+}
+
+.product-table .cell-img {
+    width: 10%;
+    padding: 10px;
+    text-align: center;
+}
+.product-table .cell-img .p-img {
+    width: 80px;
+    height: 80px;
+    border: 1px solid #ddd;
+}
+.product-table .cell-info{
+    width: 30%;
+    text-align: left;
+}
+.product-table .cell-price{
+    width: 20%;
+    text-align: center;
+}
+.product-table .cell-count{
+    width: 20%;
+    text-align: center;
+}
+.product-table .cell-total{
+    width: 20%;
+    text-align: center;
+}

@@ -2,7 +2,7 @@
 * @Author: Polylanger
 * @Date:   2018-04-07 12:46:40
 * @Last Modified by:   Polylanger
-* @Last Modified time: 2018-04-07 15:07:24
+* @Last Modified time: 2018-04-07 17:21:32
 */
 
 'use strict'
@@ -20,8 +20,17 @@ const _shop = {
         });
     }, 
 
+    // 获取店铺信息
+    getShopInfo: function(resolve, reject) {
+        _apec.producerRequest({
+            url     : _apec.getServerUrl('/producer/shop/get_information.do'), 
+            success : resolve, 
+            error   : reject
+        });
+    }, 
+
     // 修改店铺信息
-    updateShop: function(resolve, reject) {
+    updateShop: function(shopInfo, resolve, reject) {
         _apec.producerRequest({
             url     : _apec.getServerUrl('/producer/shop/update.do'), 
             data    : shopInfo, 

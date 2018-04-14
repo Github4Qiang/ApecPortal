@@ -1,0 +1,47 @@
+<!-- <div class="loading"></div> -->
+<table class="order-list-table header">
+    <tr>
+        <th class="cell cell-img">&nbsp;</th>
+        <th class="cell cell-info"> 商品信息</th>
+        <th class="cell cell-price">单价</th>
+        <th class="cell cell-count">数量</th>
+        <th class="cell cell-total">小计</th>
+    </tr>
+</table>
+{{#list}}
+<table class="order-list-table order-item" data-shop-order-id="{{shopOrderId}}">
+    <!-- 订单信息 -->
+    <tr>
+        <td colspan="5" class="shop-order-info">
+            <span class="order-text">商家订单号:
+                <span class="shop-order-no">{{subOrderNo}}</span>
+            </span>
+            <span class="order-text">{{createTime}}</span>
+            <span class="order-text">子订单状态:{{statusDesc}}</span>
+            <span class="order-text">
+                <span>子订单总价:</span>
+                <span class="order-total">￥{{payment}}</span>
+            </span>
+            <a class="link order-detail" href="../producer/shop-order-detail.html?subOrderNo={{subOrderNo}}">查看详情 ></a>
+        </td>
+    </tr>
+    <!-- 商品列表 -->
+    {{#orderItemVoList}}
+    <tr>
+        <td class="cell cell-img">
+            <a href="../producer/shop-product-detail.html?productId={{productId}}" target="_blank">
+                <img class="p-img" src="{{imageHost}}{{productImage}}" alt="{{productName}}"/>
+            </a>
+        </td>
+        <td class="cell cell-info">
+            <a class="link" href="../producer/shop-product-detail.html?productId={{productId}}" target="_blank">
+            {{productName}}
+            </a>
+        </td>
+        <td class="cell cell-price">￥{{currentUnitPrice}}</td>
+        <td class="cell cell-count">{{quantity}}</td>
+        <td class="cell cell-total">￥{{totalPrice}}</td>
+    </tr>
+    {{/orderItemVoList}}
+</table>
+{{/list}}

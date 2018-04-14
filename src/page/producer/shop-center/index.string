@@ -1,0 +1,29 @@
+<div class="form-line">
+    <label class="label" for="shopName">店&nbsp;名：</label>
+    <span class="text">{{shopName}}</span>    
+</div>
+<div class="form-line">
+    <label class="label" for="producerProvince">省&nbsp;份：</label>
+    <span class="text">{{producerProvince}}</span>    
+</div>
+<div class="form-line">
+    <label class="label" for="producerCity">城&nbsp;市：</label>
+    <span class="text">{{producerCity}}</span>    
+</div>
+<div class="form-line">
+    <label class="label" for="producerDistrict">区&nbsp;县：</label>
+    <span class="text">{{producerDistrict}}</span>    
+</div>
+<div class="form-line">
+    <label class="label" for="producerAddress">详细地址：</label>
+    <span class="text">{{producerAddress}}</span>    
+</div>
+<div class="form-line">
+    <label class="label" for="serverPhone">服务电话：</label>
+    <span class="text">{{serverPhone}}</span>    
+</div>
+<div class="form-line">
+    <label class="label" for="bankCard">银行卡号：</label>
+    <span class="text">{{bankCard}}</span>    
+</div>
+<a class="btn btn-submit" href="../producer/shop-center-update.html">编辑</a>

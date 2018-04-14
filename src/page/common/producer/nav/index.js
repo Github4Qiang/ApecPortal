@@ -2,7 +2,7 @@
 * @Author: Polylanger
 * @Date:   2018-04-05 20:10:28
 * @Last Modified by:   Polylanger
-* @Last Modified time: 2018-04-06 16:44:40
+* @Last Modified time: 2018-04-07 20:28:09
 */
 
 'use strict'
@@ -62,7 +62,8 @@ const nav = {
     loadShopInfo: function() {
         _producer.checkOpenShop(function(res) {
             $('.nav-item.not-open').hide()
-                .siblings('.nav-item.open').show().css('display', 'inline-block');
+                .siblings('.nav-item.open').show().css('display', 'inline-block')
+                    .attr('data-shop-id', res);
         }, function(errMsg) {
             // do nothing
         });

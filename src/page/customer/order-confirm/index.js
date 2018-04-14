@@ -2,7 +2,7 @@
 * @Author: Polylanger
 * @Date:   2018-04-02 20:44:06
 * @Last Modified by:   Polylanger
-* @Last Modified time: 2018-04-06 16:50:18
+* @Last Modified time: 2018-04-11 15:03:21
 */
 'use strict';
 // order-confirm: 订单确认页
@@ -13,6 +13,7 @@ require('page/common/nav/index.js');
 const _apec     = require('util/apec.js');
 const _address  = require('service/address-service.js');
 const _order    = require('service/order-service.js');
+const addressModal = require('./address-modal.js');
 
 const templateAddress = require('./address.string');
 const templateProduct = require('./product.string');
@@ -39,11 +40,32 @@ const page = {
                 $this.addClass('active').siblings('.address-item').removeClass('active');
                 _this.data.selectedAddressId = $this.data('address-id');
             } else {
-                // todo: 添加收货地址
+                // 添加收货地址
+                addressModal.show({
+                    isUpdate  : false, 
+                    onSuccess : function() {
+                        _this.loadAddress();
+                    }
+                })
             }
         });
-        // todo: 编辑收货地址
-
+        // 编辑收货地址
+        $(document).on('click', '.address-update', function(e) {
+            e.stopPropagation();
+            var addressId = $(this).parents('.address-item').data('address-id');
+            // 获取收货地址
+            _address.getAddress(addressId, function(res) {
+                addressModal.show({
+                    isUpdate : true, 
+                    data     : res, 
+                    onSuccess: function() {
+                        _this.loadAddress();
+                    }
+                });
+            }, function(errMsg) {
+                _apec.errorTips(errMsg);
+            });
+        });
         // 删除收货地址
         $(document).on('click', '.address-delete', function(e) {
             // 阻止点击事件向 address-item 传递；（否则该 item 会被选中）

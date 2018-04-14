@@ -2,7 +2,7 @@
 * @Author: Polylanger
 * @Date:   2018-03-27 20:46:49
 * @Last Modified by:   Polylanger
-* @Last Modified time: 2018-04-07 16:40:33
+* @Last Modified time: 2018-04-14 21:20:30
 */
 
 'use strict'
@@ -38,7 +38,18 @@ var getProducerHtmlConfig = function(name, title){
             chunks: ["common", name]    // 允许插入到模板中的 trunks
         };
 }
-
+// 获取 管理员 html-webpack-plugin 参数的方法
+var getManagerHtmlConfig = function(name, title){
+    return {
+            template: __dirname + "/src/view/manager/" + name + ".html",    // 本地模板文件的位置
+            filename: "view/manager/" + name + ".html",                     // 相对于 config.output.path 即：/dist/
+            title: title, 
+            favicon: './favicon.ico', 
+            inject: true,               // 所有 JavaScript 静态资源插入到 body 元素的底部
+            hash: true,                 // 为所有注入的静态资源添加 webpack 每次编译产生的唯一 hash 值
+            chunks: ["common", name]    // 允许插入到模板中的 trunks
+        };
+}
 // webpack config
 var config = {
 	// webpack 基本配置
@@ -61,8 +72,16 @@ var config = {
         'result'            : [__dirname + '/src/page/customer/result/index.js'], 
         'about'             : [__dirname + '/src/page/customer/about/index.js'],
 
-        'open-shop'         : [__dirname + '/src/page/producer/open-shop/index.js'],
-        'producer-center'   : [__dirname + '/src/page/producer/producer-center/index.js'],
+        'open-shop'             : [__dirname + '/src/page/producer/open-shop/index.js'],
+        'shop-center'           : [__dirname + '/src/page/producer/shop-center/index.js'],
+        'shop-center-update'    : [__dirname + '/src/page/producer/shop-center-update/index.js'],
+        'shop-product-manage'   : [__dirname + '/src/page/producer/shop-product-manage/index.js'],
+        'shop-product-detail'   : [__dirname + '/src/page/producer/shop-product-detail/index.js'],
+        'shop-product-save'     : [__dirname + '/src/page/producer/shop-product-save/index.js'],
+        'shop-order-manage'     : [__dirname + '/src/page/producer/shop-order-manage/index.js'],
+        'shop-order-detail'     : [__dirname + '/src/page/producer/shop-order-detail/index.js'],
+
+        'admin-login'     : [__dirname + '/src/page/manager/admin-login/index.js'],
 	}, 
 	output: {
 		path: __dirname + '/dist', 			// 打包后的文件路径
@@ -152,7 +171,15 @@ var config = {
         new HtmlWebpackPlugin(getCustomerHtmlConfig('about', '关于 APEC')), 
 
         new HtmlWebpackPlugin(getProducerHtmlConfig('open-shop', '开店申请')),
-        new HtmlWebpackPlugin(getProducerHtmlConfig('producer-center', '卖家中心')),
+        new HtmlWebpackPlugin(getProducerHtmlConfig('shop-center', '我的店铺')),
+        new HtmlWebpackPlugin(getProducerHtmlConfig('shop-center-update', '修改店铺信息')),
+        new HtmlWebpackPlugin(getProducerHtmlConfig('shop-product-manage', '商品管理')),
+        new HtmlWebpackPlugin(getProducerHtmlConfig('shop-product-detail', '查看商品详情')),
+        new HtmlWebpackPlugin(getProducerHtmlConfig('shop-product-save', '编辑商品')),
+        new HtmlWebpackPlugin(getProducerHtmlConfig('shop-order-manage', '订单管理')),
+        new HtmlWebpackPlugin(getProducerHtmlConfig('shop-order-detail', '订单详情')),
+
+        new HtmlWebpackPlugin(getManagerHtmlConfig('admin-login', '管理员登录')),
 	]
 };
 

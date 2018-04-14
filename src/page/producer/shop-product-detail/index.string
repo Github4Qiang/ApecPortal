@@ -1,0 +1,49 @@
+<div class="intro-wrap">
+    <div class="p-img-container">
+        <div class="main-img-container">
+            <img class="main-img" src="{{imageHost}}{{mainImage}}" alt="{{name}}" />
+        </div>
+        <ul class="p-img-list">
+            {{#subImages}}
+            <li class="p-img-item">
+                <img class="p-img" src="{{imageHost}}{{.}}" alt="{{name}}" />
+            </li>
+            {{/subImages}}
+        </ul>
+    </div>
+    <div class="p-info-container">
+        <h1 class="p-name">{{name}}</h1>
+        <p class="p-subtitle">{{subtitle}}</p>
+        <div class="p-info-item p-price-container">
+            <span class="label">价格</span>
+            <span class="info">{{price}}</span>
+        </div>
+        <div class="p-info-item">
+            <span class="label">库存</span>
+            <span class="info">{{stock}}</span>
+        </div>
+        <div class="p-info-item">
+            <span class="label">类别</span>
+            <span class="info">{{categoryIdLv3}}</span>
+        </div>
+        <div class="p-info-item">
+            <span class="label">状态</span>
+            <span class="info">{{statusDesc}}</span>
+        </div>
+    </div>
+</div>
+<div class="detail-wrap">
+    <!-- Tab 列表：选择下方功能区 -->
+    <div class="detail-tab-container">
+        <ul class="tab-list">
+            <li class="tab-item active">商品详情</li>
+            <li class="tab-item">规格参数</li>
+            <li class="tab-item">用户评价</li>
+            <li class="tab-item">相似商品</li>
+        </ul>
+    </div>
+    <!-- 富文本（由 Simditor 生成） -->
+    <div class="detail-container">
+        {{{detail}}}
+    </div>
+</div>

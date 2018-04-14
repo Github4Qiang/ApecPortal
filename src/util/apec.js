@@ -2,7 +2,7 @@
 * @Author: Polylanger
 * @Date:   2018-03-28 20:46:24
 * @Last Modified by:   Polylanger
-* @Last Modified time: 2018-04-06 17:29:29
+* @Last Modified time: 2018-04-12 23:39:57
 */
 
 'use strict'
@@ -26,6 +26,34 @@ var _apec = {
 			dataType: param.type 	|| 'json', 
 			data 	: param.data 	|| '', 
 			success : function(res) {
+				// 请求成功
+				if (0 === res.status) {
+					typeof param.success === 'function' && param.success(res.data, res.msg);
+				}
+				// 没有登录状态，需要强制登录
+				else if (5 === res.status) {
+					_this.doLogin();
+				}
+				// 请求数据错误
+				else if (1 === res.status) {
+					typeof param.error === 'function' && param.error(res.msg);
+				}
+			}, 
+			// 请求失败
+			error 	: function(err) {
+				typeof param.error === 'function' && param.error(err.status);
+			}
+		});
+	}, 
+	fileRequest: function(param) {
+		var _this = this;
+		$.ajax({
+			type 		: param.method 	|| 'post', 
+			url 		: param.url 	|| '', 
+			processData	: false,
+			contentType	: false,  
+			data 		: param.data 	|| '', 
+			success 	: function(res) {
 				// 请求成功
 				if (0 === res.status) {
 					typeof param.success === 'function' && param.success(res.data, res.msg);

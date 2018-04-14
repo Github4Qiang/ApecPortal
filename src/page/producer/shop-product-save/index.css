@@ -1,0 +1,112 @@
+/*
+* @Author: Polylanger
+* @Date:   2018-04-08 17:39:16
+* @Last Modified by:   Polylanger
+* @Last Modified time: 2018-04-13 12:26:33
+*/
+.panel-body .form-item {
+    margin: 20px 20px;
+}
+.panel-body .form-item .form-label {
+    font-size: 15px;
+    margin-top: 10px;
+    margin-right: 20px;
+}
+.panel-body .form-item .form-content {
+    padding-left: 20px;
+    height: 40px;
+    line-height: 40px;
+    font-size: 15px;
+    border: 1px solid #bdbdbd;
+    outline: none;
+    width: 450px;
+}
+.panel-body .form-item select {
+    padding-left: 20px;
+    height: 40px;
+    line-height: 40px;
+    font-size: 15px;
+    width: 140px;
+    margin-right: 10px;
+}
+
+.panel-body .image-container {
+    overflow: hidden;
+}
+.panel-body .form-label {
+    float: left;
+}
+/* 添加图片的区域 */
+.panel-body .image-list {
+    float: left;
+    height: 100px;
+    overflow: hidden;
+    margin-top: 5px;
+    margin-right: -10px;
+}
+.panel-body .image-list .image-item {
+    float: left;
+    margin-right: 10px;
+    width: 96px;
+    height: 96px;
+    border: 2px solid #eee;
+    cursor: pointer;
+    list-style: none;
+    position: relative;
+}
+.panel-body .image-list .image-item img {
+    height: 100%;
+    width: 100%;
+}
+/* 删除蒙版样式 */
+.panel-body .image-list .image-item .fa {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: none;
+    cursor: pointer;
+    text-align: center;
+    width: 96px;
+    height: 96px;
+    line-height: 96px;
+    background: rgba(0,0,0,.2);
+    font-size: 50px;
+    font-weight: normal;
+    color: #aaa;
+}
+.panel-body .image-list .image-item:hover .fa {
+    display: block;
+}
+
+/* 添加按钮样式 */
+.panel-body .image-list .image-add {
+    float: left;
+    margin-right: 10px;
+    width: 96px;
+    height: 96px;
+    border: 2px solid #eee;
+    cursor: pointer;
+    list-style: none;
+    text-align: center;
+    color: #ccc;
+}
+.panel-body .image-list .image-add:hover {
+    background: #eee;
+}
+.panel-body .image-list .image-add .fa {
+    margin-top: 15px;
+    font-size: 45px;
+    line-height: 45px;
+}
+.panel-body .image-list .image-add .text {
+    font-size: 12px;
+}
+.panel-body .image-list #add-image {
+    position: absolute;
+    clip: rect(0, 0, 0, 0);
+}
+
+/* 富文本编辑器 */
+.panel-body .submit-btn-container {
+    margin: 20px 0;
+}

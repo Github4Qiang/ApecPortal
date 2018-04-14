@@ -24,40 +24,48 @@
     </table>
 </div>
 <div class="cart-list">
-    {{#cartProductVoList}}
-    <table class="cart-table" data-product-id="{{productId}}">
-        <tbody>
-            <tr>
-                <td class="cart-cell cell-check">
-                    <label>
-                        {{#productChecked}}
-                        <input class="cart-select" type="checkbox" checked="true" />
-                        {{/productChecked}}
-                        {{^productChecked}}
-                        <input class="cart-select" type="checkbox"/>
-                        {{/productChecked}}
-                    </label>
-                </td>
-                <td class="cart-cell cell-img">
-                    <img class="p-img" src="{{imageHost}}{{productMainImage}}"></img>
-                </td>
-                <td class="cart-cell cell-info">
-                    <a class="link" href="../customer/detail.html?productId={{productId}}"> {{productName}}{{productSubtitle}}</a>
-                </td>
-                <td class="cart-cell cell-price">￥{{productPrice}}</td>
-                <td class="cart-cell cell-count">
-                    <span class="count-btn minus">-</span>
-                    <input class="count-input" value="{{quantity}}" data-stock="{{productStock}}" readonly=""/>
-                    <span class="count-btn plus">+</span>
-                </td>
-                <td class="cart-cell cell-total">￥{{productTotalPrice}}</td>
-                <td class="cart-cell cell-operation">
-                    <span class="link cart-delete">删除</span>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-    {{/cartProductVoList}}
+    {{#cartShopVoList}}
+    <div class="cart-shop-list">
+        <div class="cart-shop-info">
+            <div class="cart-shop-name"><a class="link" href="../customer/shop.html?shopId={{shopId}}">{{shopName}}</a></div>
+            <div class="cart-shop-total-price">￥{{cartShopTotalPrice}}</div>
+        </div>
+        {{#cartProductVoList}}
+        <table class="cart-table" data-product-id="{{productId}}">
+            <tbody>
+                <tr>
+                    <td class="cart-cell cell-check">
+                        <label>
+                            {{#productChecked}}
+                            <input class="cart-select" type="checkbox" checked="true" />
+                            {{/productChecked}}
+                            {{^productChecked}}
+                            <input class="cart-select" type="checkbox"/>
+                            {{/productChecked}}
+                        </label>
+                    </td>
+                    <td class="cart-cell cell-img">
+                        <img class="p-img" src="{{imageHost}}{{productMainImage}}"></img>
+                    </td>
+                    <td class="cart-cell cell-info">
+                        <a class="link" href="../customer/detail.html?productId={{productId}}"> {{productName}}{{productSubtitle}}</a>
+                    </td>
+                    <td class="cart-cell cell-price">￥{{productPrice}}</td>
+                    <td class="cart-cell cell-count">
+                        <span class="count-btn minus">-</span>
+                        <input class="count-input" value="{{quantity}}" data-stock="{{productStock}}" readonly=""/>
+                        <span class="count-btn plus">+</span>
+                    </td>
+                    <td class="cart-cell cell-total">￥{{productTotalPrice}}</td>
+                    <td class="cart-cell cell-operation">
+                        <span class="link cart-delete">删除</span>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        {{/cartProductVoList}}
+    </div>
+    {{/cartShopVoList}}
 </div>
 <div class="cart-footer">
     <div class="select-container">
@@ -79,7 +87,7 @@
     </div>
     <div class="submit-container">
         <span>总价：</span>
-        <span class="submit-total">${{cartTotalPrice}}</span>
+        <span class="submit-total">￥{{cartTotalPrice}}</span>
         <span class="btn btn-submit">去结算</span>
     </div>
 </div>

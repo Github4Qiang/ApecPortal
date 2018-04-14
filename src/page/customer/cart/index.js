@@ -2,7 +2,7 @@
 * @Author: Polylanger
 * @Date:   2018-04-02 12:12:48
 * @Last Modified by:   Polylanger
-* @Last Modified time: 2018-04-06 16:45:46
+* @Last Modified time: 2018-04-11 11:10:02
 */
 
 'use strict'
@@ -152,7 +152,7 @@ const page = {
         nav.loadCartCount();
     }, 
     filter: function(data) {
-        data.notEmpty = !!data.cartProductVoList.length;
+        data.notEmpty = !!data.cartShopVoList.length;
     }, 
     deleteCartProducts: function(productIds) {
         var _this = this;

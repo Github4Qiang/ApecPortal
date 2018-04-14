@@ -1,0 +1,98 @@
+/*
+* @Author: Polylanger
+* @Date:   2018-04-14 15:30:25
+* @Last Modified by:   Polylanger
+* @Last Modified time: 2018-04-14 17:18:39
+*/
+/* shop-order-manage: 店铺订单管理页; */
+.panel-title {
+    overflow: hidden;
+}
+.panel-title .title{
+    float: left;
+    margin-top: 5px;
+}
+.panel-title #order-status-selector {
+    float: right;
+    width: 120px;
+    font-size: 14px;
+    height: 30px;
+    line-height: 30px;
+}
+
+/* order-list: 订单列表页 */
+.order-list-table{
+    width: 100%;
+    border-collapse: collapse;
+    background: #fafafa;
+    margin-bottom: 20px;
+}
+.order-list-table .cell{
+    padding: 10px 0;
+    color: #666;
+    border-bottom:  1px solid #eee;
+}
+
+/* 订单列表头部样式 */
+.order-list-table .header{  
+    background: #eee;
+}
+
+
+/* 商家信息 */
+.order-list-table .shop-order-info{
+    background: #eee;
+    padding: 10px;
+    color: #999;
+}
+.order-list-table .shop-order-info .order-text{
+    margin-right: 25px;
+}
+/* 订单号样式 */
+.order-list-table .shop-order-info .shop-order-no{
+    font-weight: bold;
+}
+/* 订单总价样式 */
+.order-list-table .shop-order-info .order-total{
+    font-weight: bold;
+    color: #c60023;
+}
+/* 查看订单详情按钮样式 */
+.order-list-table .shop-order-info .order-detail{
+    float: right;
+    margin-right: 20px;
+}
+
+/* 商品列表样式 */
+/* 图片样式 */
+.order-list-table .cell-img{
+    padding: 10px;
+    width: 10%;
+    text-align: center;
+
+}
+.order-list-table .cell-img .p-img{
+    width: 80px;
+    height: 80px;
+    border: 1px solid #ddd;
+}
+/* 商品信息样式 */
+.order-list-table .cell-info{
+    width: 45%;
+    text-align: left;
+}
+/* 单价样式 */
+.order-list-table .cell-price{
+    width: 15%;
+    text-align: center;
+}
+/* 数量样式 */
+.order-list-table .cell-count{
+    width: 15%;
+    text-align: center;
+}
+/* 小计样式 */
+.order-list-table .cell-total{
+    width: 15%;
+    text-align: center;
+}

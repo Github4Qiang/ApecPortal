@@ -10,7 +10,7 @@
     </div>
     <div class="address-content">
         <p class="address-detail">详细地址：{{receiverAddress}}</p>
-        <p class="address-phone">手机：{{receiverMobile}}</p>
+        <p class="address-phone">手机：{{receiverPhone}}</p>
     </div>
     <div class="address-operation">
         <span class="link address-update">编辑</span>

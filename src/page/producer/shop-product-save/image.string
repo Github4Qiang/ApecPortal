@@ -1,0 +1,13 @@
+{{#subImages}}
+<div class="image-item">
+    <img class="img" src="{{.}}"></img>
+    <i class="fa fa-close fa-fw"></i>
+</div>
+{{/subImages}}
+{{#showAdd}}
+<div class="image-add">
+    <i class="fa fa-plus"></i> 
+    <div class="text">添加图片</div> 
+</div>
+<input type="file" name="add-image" id="add-image" >
+{{/showAdd}}

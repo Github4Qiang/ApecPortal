@@ -2,7 +2,7 @@
 * @Author: Polylanger
 * @Date:   2018-03-30 13:58:53
 * @Last Modified by:   Polylanger
-* @Last Modified time: 2018-04-06 16:44:10
+* @Last Modified time: 2018-04-08 15:26:09
 */
 
 'use strict'
@@ -18,7 +18,7 @@ const navSide = {
 			{name: 'user-center', desc: '个人中心', href: '../customer/user-center.html'}, 
 			{name: 'order-list', desc: '我的订单', href: '../customer/order-list.html'}, 
 			{name: 'user-pass-update', desc: '修改密码', href: '../customer/user-pass-update.html'}, 
-			{name: 'about', desc: '关于APEC', href: '../customer/about'}, 
+			{name: 'about', desc: '关于APEC', href: '../customer/about.html'}, 
 		]
 	}, 
 	init: function(option) {

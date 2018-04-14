@@ -1,0 +1,43 @@
+<div class="product-header">
+    <table class="product-table">
+        <tbody>
+            <tr>
+                <th class="product-cell cell-info">商品信息</th>
+                <th class="product-cell cell-price">单价</th>
+                <th class="product-cell cell-count">库存</th>
+                <th class="product-cell cell-category">所属分类</th>
+                <th class="product-cell cell-operation">操作</th>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<div class="product-list">
+    <table class="product-table">
+        <tbody>
+            {{#list}}
+            <tr data-product-id="{{id}}">
+                <td class="product-cell cell-img">
+                    <img class="p-img" src="{{imageHost}}{{mainImage}}"></img>
+                </td>
+                <td class="product-cell cell-info">
+                    <a class="link" href="../producer/shop-product-detail.html?productId={{id}}">{{name}}&nbsp;{{subtitle}}</a>
+                </td>
+                <td class="product-cell cell-price">￥{{price}}</td>
+                <td class="product-cell cell-count">{{stock}}</td>
+                <td class="product-cell cell-category">{{category}}</td>
+                <td class="product-cell cell-operation">
+                    {{#online}}
+                    <span class="link product-take-down">下架</span>
+                    {{/online}}
+                    {{^online}}
+                    <span class="link product-online">上架</span>
+                    {{/online}}
+                    <span class="link product-delete">删除</span>
+                </td>
+            </tr>
+            {{/list}}
+         </tbody>
+    </table>
+</div>
+<!-- 分页容器 -->
+<div class="pagination"></div>

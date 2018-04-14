@@ -2,7 +2,7 @@
 * @Author: Polylanger
 * @Date:   2018-04-05 14:29:18
 * @Last Modified by:   Polylanger
-* @Last Modified time: 2018-04-07 15:10:07
+* @Last Modified time: 2018-04-07 16:56:25
 */
 
 'use strict'
@@ -71,7 +71,7 @@ const page = {
         // 店铺开通，"激活"按钮
         $(document).on('click', '.btn-activate', function() {
             _shop.activateShop(function(res) {
-                window.location.href = '../producer/producer-center.html';
+                window.location.href = '../producer/shop-center.html';
             }, function(errMsg) {
                 _apec.errorTips(errMsg);
             });

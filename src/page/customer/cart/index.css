@@ -2,14 +2,13 @@
 * @Author: Polylanger
 * @Date:   2018-04-02 12:12:53
 * @Last Modified by:   Polylanger
-* @Last Modified time: 2018-04-02 13:31:16
+* @Last Modified time: 2018-04-11 11:24:41
 */
 /* cart: 购物车页面样式*/
 .cart-table {
     width: 100%;
     border-collapse: collapse;
     border: 1px solid #ebebeb;
-    margin-bottom: 10px;
 }
 
 /* 标题栏样式 */
@@ -26,6 +25,26 @@
     text-align: left;
     padding-left: 20px;
 }
+
+/* 店铺信息样式 */
+.cart-shop-info {
+    height: 40px;
+    line-height: 40px;
+    overflow: hidden;
+    padding: 0 20px;
+    margin-top: 10px;
+    background: #eee;
+}
+.cart-shop-info .cart-shop-name {
+    float: left;
+}
+.cart-shop-info .cart-shop-total-price {
+    float: right;
+    margin-right: 150px;
+    font-size: 16px;
+    color: #c60023;
+}
+
 /* 商品信息样式 */
 /* 商品信息中的图片样式 */
 .cart-table .cell-img {
@@ -97,6 +116,7 @@
 
 /* footer */
 .cart-footer {
+    margin-top: 10px;
     position: relative;
     line-height: 50px;
     background: #eee;

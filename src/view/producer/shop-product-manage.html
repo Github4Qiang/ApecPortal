@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%= require('html-loader!../layout/head-common.html')%> 
+    <title><%= htmlWebpackPlugin.options.title%> — APEC农产品电商</title>
+</head>
+<body>
+    <%= require('html-loader!../layout/producer/nav.html')%>
+    <%= require('html-loader!../layout/header.html')%>
+    <!-- 面包屑导航 -->
+    <div class="crumb">
+        <div class="w">
+            <div class="curmb-container">
+                <a class="link" href="../customer/index.html">APEC</a>
+                <span>></span>
+                <span class="link-text">
+                    <%= htmlWebpackPlugin.options.title%>
+                </span>
+            </div>
+        </div>
+    </div>
+
+    <div class="page-wrap w">
+        <%= require('html-loader!../layout/nav-side.html')%>
+        <div class="content with-nav">
+            <div class="panel">
+                <div class="panel-header">
+                    <div class="panel-title">
+                        <div class="title"><%= htmlWebpackPlugin.options.title%></div>
+                        <div class="create-product"><a class="btn" href="../producer/shop-product-save.html">添加商品</a></div>
+                    </div>
+                </div>
+                <div class="panel-body">
+                    <div class="loading"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <%= require('html-loader!../layout/footer.html')%>
+</body>
+</html>
